@@ -76,10 +76,22 @@ for (let i=0 ; i <=50 ; i++){
 
 //Q9: Count how many numbers between 1 to 100 are divisble by both 3 and 5.
 
-for (let i  = 0; i<=100; i++){
-    if(i%3 === 0 ){
-        console.log(`divisible by 3: ${i}`)
-    }else if(i%5 === 0){
-        console.log(`divisible by 5: ${i}`)
+// for (let i  = 0; i<=100; i++){
+//     if(i%3 === 0 ){
+//         console.log(`divisible by 3: ${i}`)
+//     }else if(i%5 === 0){
+//         console.log(`divisible by 5: ${i}`)
+//     }
+// }
+
+// Q10: Stop at first multiple of 7
+// write a loop from 1 to 100 that: 
+// . prints each number 
+// . stops completely when it finds the first number divisible by 7
+
+for (let stop = 1; stop < 10; stop++){
+    if(stop % 7 === 0){
+        break;
     }
-}
+    console.log(stop)
+} 
