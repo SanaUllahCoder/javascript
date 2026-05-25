@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Cards</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%);
+            color: #fff;
+        }
+
+        .app {
+            width: min(1100px, 100%);
+        }
+
+        .search-box {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 520px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(10px);
+        }
+
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03));
+            pointer-events: none;
+        }
+
+        .card-img {
+            width: 100%;
+            min-height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: blur(1px) brightness(0.92);
+            transform: scale(1.02);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 4px 8px;
+        }
+
+        .card h2 {
+            margin: 0 0 12px;
+            font-size: 1.4rem;
+            z-index: 1;
+        }
+
+        .card p {
+            margin: 0;
+            line-height: 1.6;
+            color: #f5f5f5;
+            z-index: 1;
+        }
+
+        .no-results {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            grid-column: 1 / -1;
+            padding: 40px 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search cards by title or description..." />
+        </div>
+        <div id="cardsContainer" class="cards"></div>
+    </div>
+
+    <script src="someProject.js"></script>
+</body>
+</html>
